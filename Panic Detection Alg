@@ -1,0 +1,51 @@
+Panic Detection Algorithm Outline
+
+Core Concept
+A swimmer in distress exhibits sustained, rapid, irregular motion in a confined area — unlike normal swimming which is rhythmic and travels across zones. The algorithm exploits this difference.
+
+Step 1 — Background Establishment
+- Capture first N frames on startup
+- Build a static background model of the empty/calm pool
+- This becomes the baseline reference
+
+Step 2 — Per Frame Grid Analysis
+- Divide frame into grid (e.g. 10x10 cells)
+- For each cell, compare current frame against background
+- Calculate pixel change intensity per cell
+- If change exceeds threshold → cell is "active"
+
+Step 3 — Panic Pattern Detection
+This is your core differentiator:
+- Track each cell's activity over a rolling time window (e.g. 3–5 seconds)
+- Normal swimming:  cell activates → moves to adjacent cell → moves on
+- Panic motion:     cell stays active repeatedly within the same zone
+- If a cell triggers continuously for X frames within the window → FLAG as panic
+
+Step 4 — Confidence Filtering
+To reduce false alarms:
+- Require motion intensity above a minimum threshold
+- Require motion to persist for minimum duration (e.g. 3 seconds)
+- Ignore single-frame spikes (splashing, jumping)
+- Optional: require motion to stay within a 2x2 cell radius (confined area)
+
+Step 5 — Alert Trigger
+- Flagged zone is identified by grid coordinates (e.g. C4)
+- Alert is sent to lifeguard wearable
+- Wearable vibrates + displays grid zone location
+- Visual overlay on monitor highlights the flagged cell in red
+
+Visual Flow
+Camera Feed
+    ↓
+Grid Overlay
+    ↓
+Per-Cell Motion Detection
+    ↓
+Rolling Time Window Analysis
+    ↓
+Panic Threshold Met?
+   NO  → Continue monitoring
+   YES → Send alert to wearable + highlight zone
+
+Key Variables You Can Tune
+VariablePurposeExample ValueGrid sizeCoverage resolution10x10 cellsMotion thresholdSensitivity25 pixel intensityTime windowHow long to observe4 secondsPanic durationFrames needed to flag20 consecutive framesConfinement radiusKeeps motion localized2x2 cell area
