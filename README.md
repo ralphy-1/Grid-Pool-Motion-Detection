@@ -35,7 +35,7 @@ Platform: TBD
 
 -------------
 Authors:
-Aaron Mihidri, 
+Aaron Mihiretu, 
 Eildvin Logrono
 -------------
 
