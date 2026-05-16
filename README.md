@@ -4,19 +4,22 @@ Overhead Camera Motion Detection System An overhead camera divides its field of 
 PoolGrid — Overhead Motion Detection System for Commercial Pools
 A real-time, grid-based motion detection system designed for large commercial swimming pools. The system uses an overhead camera to divide the pool surface into a structured grid, monitors each cell for panic-pattern motion, and delivers directional alerts to a lifeguard's wearable device (watch/band).
 
- Purpose
-Standard pool alarms are built for residential use and alert a parent's smartphone. PoolGrid is built for lifeguards. In a large commercial pool, a lifeguard cannot afford to check a phone — they need an instant, directional signal that tells them exactly where to look.
+Purpose
+Standard pool alarms are built for residential or larger bodies of water use and alert a parent's smartphone. PoolGrid is built for lifeguards. In a large commercial pool, a lifeguard cannot afford to check a phone they need an instant, directional signal that tells them exactly where to look.
 PoolGrid detects sustained rapid motion within a grid zone, flags it as a potential panic event, and sends a vibration alert to a wearable device that identifies the specific grid location.
+________________________________________________________________________
+Key Features 
 
-Key Features
+(Up coming features ***)
+(TB Updated###)
 
-Overhead camera with full pool surface coverage
+Overhead camera with full pool surface coverage (TO BE MANUAL auto grid creation uniform)
 Uniform grid overlay divides the pool into independently monitored zones
-Panic detection via sustained motion threshold within a grid cell
-Directional wearable alert (smartwatch/band) pointing to the flagged zone
-Designed and optimized for large commercial pools
-Lightweight, real-time processing
-
+Panic detection via sustained motion threshold within a grid cell***8
+Directional wearable alert (smartwatch/band) pointing to the flagged zone***
+Designed and optimized for large commercial pools***
+Lightweight, real-time processing***
+________________________________________________________________________
 How It Works
 
 Camera captures a live overhead feed of the pool
